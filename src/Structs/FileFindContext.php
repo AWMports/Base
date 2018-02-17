@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseFileFindContext class.
+ * File containing the \AWMports\ezcBase\Structs\FileFindContext class.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -30,7 +30,10 @@
  * @package Base
  * @version //autogentag//
  */
-class ezcBaseFileFindContext extends ezcBaseStruct
+
+namespace AWMports\ezcBase\Structs
+
+class FileFindContext extends AWMports\ezcBase\Struct
 {
     /**
      * The list of files
@@ -54,7 +57,7 @@ class ezcBaseFileFindContext extends ezcBaseStruct
     public $size;
 
     /**
-     * Constructs a new ezcBaseFileFindContext with initial values.
+     * Constructs a new \AWMports\ezcBase\Structs\FileFindContext with initial values.
      *
      * @param array(string) $elements
      * @param int $count
@@ -78,11 +81,11 @@ class ezcBaseFileFindContext extends ezcBaseStruct
      * is parsed with PHP.
      *
      * @param array(string=>mixed) $array
-     * @return ezcBaseFileFindContext
+     * @return \AWMports\ezcBase\Structs\FileFindContext
      */
     static public function __set_state( array $array )
     {
-        return new ezcBaseFileFindContext( $array['elements'], $array['count'], $array['size'] );
+        return new \AWMports\ezcBase\Structs\FileFindContext( $array['elements'], $array['count'], $array['size'] );
     }
 }
 ?>
