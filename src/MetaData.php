@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseMetaData class.
+ * File containing the \AWMports\ezcBase\MetaData class.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,6 +23,7 @@
  * @version //autogentag//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
  * Base class implements ways of fetching information about the installed
  * eZ Components. It knows whether to use the PEAR registry or the bundled XML
@@ -32,10 +33,13 @@
  * @version //autogentag//
  * @mainclass
  */
-class ezcBaseMetaData
+
+namespace AWMports\ezcBase
+
+class MetaData
 {
     /**
-     * Creates a ezcBaseMetaData object
+     * Creates a \AWMports\ezcBase\MetaData object
      *
      * The sole parameter $installMethod should only be used if you are really
      * sure that you need to use it. It is mostly there to make testing at
@@ -45,19 +49,19 @@ class ezcBaseMetaData
      */
     public function __construct( $installMethod = NULL )
     {
-        $installMethod = $installMethod !== NULL ? $installMethod : ezcBase::getInstallMethod();
+        $installMethod = $installMethod !== NULL ? $installMethod : \AWMports\ezcBase\Base::getInstallMethod();
 
         // figure out which reader to use
         switch ( $installMethod )
         {
-            case 'tarball':
-                $this->reader = new ezcBaseMetaDataTarballReader;
-                break;
-            case 'pear':
-                $this->reader = new ezcBaseMetaDataPearReader;
-                break;
+//            case 'tarball':
+//                $this->reader = new ezcBaseMetaDataTarballReader;
+//                break;
+//            case 'pear':
+//                $this->reader = new ezcBaseMetaDataPearReader;
+//                break;
             default:
-                throw new ezcBaseMetaDataReaderException( "Unknown install method '$installMethod'." );
+                throw new \AWMports\ezcBase\MetaDataReaderException( "Unknown install method '$installMethod'." );
                 break;
         }
     }

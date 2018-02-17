@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseFeatures class.
+ * File containing the \AWMports\ezcBase\Features class.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -30,22 +30,25 @@
  * Example:
  * <code>
  * <?php
- * echo "supports uid: " . ezcBaseFeatures::supportsUserId() . "\n";
- * echo "supports symlink: " . ezcBaseFeatures::supportsSymLink() . "\n";
- * echo "supports hardlink: " . ezcBaseFeatures::supportsLink() . "\n";
- * echo "has imagemagick identify: " . ezcBaseFeatures::hasImageIdentify() . "\n";
- * echo " identify path: " . ezcBaseFeatures::getImageIdentifyExecutable() . "\n";
- * echo "has imagemagick convert: " . ezcBaseFeatures::hasImageConvert() . "\n";
- * echo " convert path: " . ezcBaseFeatures::getImageConvertExecutable() . "\n";
- * echo "has gzip extension: " . ezcBaseFeatures::hasExtensionSupport( 'zlib' ) . "\n";
- * echo "has pdo_mysql 1.0.2: " . ezcBaseFeatures::hasExtensionSupport( 'pdo_mysql', '1.0.2' ) . "\n"
+ * echo "supports uid: " . \AWMports\ezcBase\Features::supportsUserId() . "\n";
+ * echo "supports symlink: " . \AWMports\ezcBase\Features::supportsSymLink() . "\n";
+ * echo "supports hardlink: " . \AWMports\ezcBase\Features::supportsLink() . "\n";
+ * echo "has imagemagick identify: " . \AWMports\ezcBase\Features::hasImageIdentify() . "\n";
+ * echo " identify path: " . \AWMports\ezcBase\Features::getImageIdentifyExecutable() . "\n";
+ * echo "has imagemagick convert: " . \AWMports\ezcBase\Features::hasImageConvert() . "\n";
+ * echo " convert path: " . \AWMports\ezcBase\Features::getImageConvertExecutable() . "\n";
+ * echo "has gzip extension: " . \AWMports\ezcBase\Features::hasExtensionSupport( 'zlib' ) . "\n";
+ * echo "has pdo_mysql 1.0.2: " . \AWMports\ezcBase\Features::hasExtensionSupport( 'pdo_mysql', '1.0.2' ) . "\n"
  * ?>
  * </code>
  *
  * @package Base
  * @version //autogentag//
  */
-class ezcBaseFeatures
+
+namespace AWMports\ezcBase
+
+class Features
 {
     /**
       * Used to store the path of the ImageMagick convert utility.
@@ -193,7 +196,7 @@ class ezcBaseFeatures
      *
      * Examples:
      * <code>
-     * ezcBaseFeatures::hasFunction( 'imagepstext' );
+     * \AWMports\ezcBase\Features::hasFunction( 'imagepstext' );
      * </code>
      * will return true if support for Type 1 fonts is available with your GD
      * extension.
@@ -209,7 +212,6 @@ class ezcBaseFeatures
     /**
      * Returns if a given class exists.
      * Checks for a given class name and returns if this class exists or not.
-     * Catches the ezcBaseAutoloadException and returns false, if it was thrown.
      *
      * @param string $className The class to check for.
      * @param bool $autoload True to use __autoload(), otherwise false.
@@ -223,10 +225,6 @@ class ezcBaseFeatures
             {
                 return true;
             }
-            return false;
-        }
-        catch ( ezcBaseAutoloadException $e )
-        {
             return false;
         }
     }

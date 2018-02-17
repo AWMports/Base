@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseOptions class.
+ * File containing the AWMports\ezcBase\Options class.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -30,7 +30,10 @@
  * @package Base
  * @version //autogentag//
  */
-abstract class ezcBaseOptions implements ArrayAccess, Iterator
+
+namespace AWMports\ezcBase
+
+abstract class Options implements ArrayAccess, Iterator
 {
     /**
      * Container to hold the properties
@@ -45,9 +48,9 @@ abstract class ezcBaseOptions implements ArrayAccess, Iterator
      * automatically passes the given options to the __set() method to set them
      * in the class.
      *
-     * @throws ezcBasePropertyNotFoundException
+     * @throws \AWMports\ezcBase\Exceptions\PropertyNotFoundException
      *         If trying to access a non existent property.
-     * @throws ezcBaseValueException
+     * @throws \AWMports\ezcBase\Exceptions\ValueException
      *         If the value for a property is out of range.
      * @param array(string=>mixed) $options The initial options to set.
      */
@@ -63,9 +66,9 @@ abstract class ezcBaseOptions implements ArrayAccess, Iterator
      * Merge an array into the actual options object.
      * This method merges an array of new options into the actual options object.
      *
-     * @throws ezcBasePropertyNotFoundException
+     * @throws \AWMports\ezcBase\Exceptions\PropertyNotFoundException
      *         If trying to access a non existent property.
-     * @throws ezcBaseValueException
+     * @throws \AWMports\ezcBase\Exceptions\ValueException
      *         If the value for a property is out of range.
      * @param array(string=>mixed) $newOptions The new options.
      */
@@ -81,15 +84,15 @@ abstract class ezcBaseOptions implements ArrayAccess, Iterator
      * Property get access.
      * Simply returns a given option.
      *
-     * @throws ezcBasePropertyNotFoundException
+     * @throws \AWMports\ezcBase\Exceptions\PropertyNotFoundException
      *         If a the value for the property options is not an instance of
      * @param string $propertyName The name of the option to get.
      * @return mixed The option value.
      * @ignore
      *
-     * @throws ezcBasePropertyNotFoundException
+     * @throws \AWMports\ezcBase\Exceptions\PropertyNotFoundException
      *         if the given property does not exist.
-     * @throws ezcBasePropertyPermissionException
+     * @throws \AWMports\ezcBase\Exceptions\PropertyPermissionException
      *         if the property to be set is a write-only property.
      */
     public function __get( $propertyName )
@@ -98,7 +101,7 @@ abstract class ezcBaseOptions implements ArrayAccess, Iterator
         {
             return $this->properties[$propertyName];
         }
-        throw new ezcBasePropertyNotFoundException( $propertyName );
+        throw new \AWMports\ezcBase\Exceptions\PropertyNotFoundException( $propertyName );
     }
 
     /**
@@ -109,11 +112,11 @@ abstract class ezcBaseOptions implements ArrayAccess, Iterator
      * @param mixed $propertyValue The option value.
      * @ignore
      *
-     * @throws ezcBasePropertyNotFoundException
+     * @throws \AWMports\ezcBase\Exceptions\PropertyNotFoundException
      *         if the given property does not exist.
-     * @throws ezcBaseValueException
+     * @throws \AWMports\ezcBase\Exceptions\ValueException
      *         if the value to be assigned to a property is invalid.
-     * @throws ezcBasePropertyPermissionException
+     * @throws \AWMports\ezcBase\Exceptions\PropertyPermissionException
      *         if the property to be set is a read-only property.
      */
     abstract public function __set( $propertyName, $propertyValue );
@@ -146,7 +149,7 @@ abstract class ezcBaseOptions implements ArrayAccess, Iterator
      * Returns an option value.
      * Get an option value by ArrayAccess.
      *
-     * @throws ezcBasePropertyNotFoundException
+     * @throws \AWMports\ezcBase\Exceptions\PropertyNotFoundException
      *         If $propertyName is not a key in the $properties array.
      * @param string $propertyName The name of the option to get.
      * @return mixed The option value.
@@ -160,9 +163,9 @@ abstract class ezcBaseOptions implements ArrayAccess, Iterator
      * Set an option.
      * Sets an option using ArrayAccess.
      *
-     * @throws ezcBasePropertyNotFoundException
+     * @throws \AWMports\ezcBase\Exceptions\PropertyNotFoundException
      *         If $propertyName is not a key in the $properties array.
-     * @throws ezcBaseValueException
+     * @throws \AWMports\ezcBase\Exceptions\ValueException
      *         If the value for a property is out of range.
      * @param string $propertyName The name of the option to set.
      * @param mixed $propertyValue The value for the option.
@@ -176,9 +179,9 @@ abstract class ezcBaseOptions implements ArrayAccess, Iterator
      * Unset an option.
      * Unsets an option using ArrayAccess.
      *
-     * @throws ezcBasePropertyNotFoundException
+     * @throws \AWMports\ezcBase\Exceptions\PropertyNotFoundException
      *         If $propertyName is not a key in the $properties array.
-     * @throws ezcBaseValueException
+     * @throws \AWMports\ezcBase\Exceptions\ValueException
      *         If a the value for a property is out of range.
      * @param string $propertyName The name of the option to unset.
      */

@@ -33,12 +33,12 @@
  * <?php
  * // lists all the files under /etc (including subdirectories) that end in
  * // .conf
- * $confFiles = ezcBaseFile::findRecursive( "/etc", array( '@\.conf$@' ) );
+ * $confFiles = \AWMports\ezcBase\File::findRecursive( "/etc", array( '@\.conf$@' ) );
  *
  * // lists all autoload files in the components source tree and excludes the
  * // ones in the autoload subdirectory. Statistics are returned in the $stats
  * // variable which is passed by reference.
- * $files = ezcBaseFile::findRecursive(
+ * $files = \AWMports\ezcBase\File::findRecursive(
  *     "/dat/dev/ezcomponents",
  *     array( '@src/.*_autoload.php$@' ),
  *     array( '@/autoload/@' ),
@@ -46,7 +46,7 @@
  * );
  *
  * // lists all binaries in /bin except the ones starting with a "g"
- * $data = ezcBaseFile::findRecursive( "/bin", array(), array( '@^/bin/g@' ) );
+ * $data = \AWMports\ezcBase\File::findRecursive( "/bin", array(), array( '@^/bin/g@' ) );
  * ?>
  * </code>
  *
@@ -54,7 +54,10 @@
  * @version //autogentag//
  * @mainclass
  */
-class ezcBaseFile
+
+namespace AWMports\ezcBase
+
+class File
 {
     /**
      * This is the callback used by findRecursive to collect data.
@@ -67,12 +70,12 @@ class ezcBaseFile
      * and file information (such as size, modes, types) as an array as
      * returned by PHP's stat() in the $fileInfo parameter.
      *
-     * @param ezcBaseFileFindContext $context
+     * @param \AWMports\ezcBase\Structs\FileFindContext $context
      * @param string $sourceDir
      * @param string $fileName
      * @param array(stat) $fileInfo
      */
-    static protected function findRecursiveCallback( ezcBaseFileFindContext $context, $sourceDir, $fileName, $fileInfo )
+    static protected function findRecursiveCallback( \AWMports\ezcBase\Structs\FileFindContext $context, $sourceDir, $fileName, $fileInfo )
     {
         // ignore if we have a directory
         if ( $fileInfo['mode'] & 0x4000 )
@@ -103,7 +106,7 @@ class ezcBaseFile
      * in order:
      *
      * <ul>
-     * <li>ezcBaseFileFindContext $context</li>
+     * <li>\AWMports\ezcBase\Structs\FileFindContext $context</li>
      * <li>string $sourceDir</li>
      * <li>string $fileName</li>
      * <li>array(stat) $fileInfo</li>
@@ -121,9 +124,9 @@ class ezcBaseFile
      * @param callback       $callback
      * @param mixed          $callbackContext
      *
-     * @throws ezcBaseFileNotFoundException if the $sourceDir directory is not
+     * @throws \AWMports\ezcBase\Exceptions\FileNotFoundException if the $sourceDir directory is not
      *         a directory or does not exist.
-     * @throws ezcBaseFilePermissionException if the $sourceDir directory could
+     * @throws \AWMports\ezcBase\Exceptions\FilePermissionException if the $sourceDir directory could
      *         not be opened for reading.
      * @return array
      */
@@ -131,13 +134,13 @@ class ezcBaseFile
     {
         if ( !is_dir( $sourceDir ) )
         {
-            throw new ezcBaseFileNotFoundException( $sourceDir, 'directory' );
+            throw new \AWMports\ezcBase\Exceptions\FileNotFoundException( $sourceDir, 'directory' );
         }
         $elements = array();
         $d = @dir( $sourceDir );
         if ( !$d )
         {
-            throw new ezcBaseFilePermissionException( $sourceDir, ezcBaseFileException::READ );
+            throw new \AWMports\ezcBase\Exceptions\FilePermissionException( $sourceDir, \AWMports\ezcBase\Exceptions\FileException::READ );
         }
 
         while ( ( $entry = $d->read() ) !== false )
@@ -164,7 +167,7 @@ class ezcBaseFile
                     $subList = self::walkRecursive( $sourceDir . DIRECTORY_SEPARATOR . $entry, $includeFilters, $excludeFilters, $callback, $callbackContext );
                     $elements = array_merge( $elements, $subList );
                 }
-                catch ( ezcBaseFilePermissionException $e )
+                catch ( \AWMports\ezcBase\Exceptions\FilePermissionException $e )
                 {
                 }
             }
@@ -230,9 +233,9 @@ class ezcBaseFile
      * @param array(string)  $excludeFilters
      * @param array()        $statistics
      *
-     * @throws ezcBaseFileNotFoundException if the $sourceDir directory is not
+     * @throws \AWMports\ezcBase\Exceptions\FileNotFoundException if the $sourceDir directory is not
      *         a directory or does not exist.
-     * @throws ezcBaseFilePermissionException if the $sourceDir directory could
+     * @throws \AWMports\ezcBase\Exceptions\FilePermissionException if the $sourceDir directory could
      *         not be opened for reading.
      * @return array
      */
@@ -246,8 +249,8 @@ class ezcBaseFile
         }
 
         // create the context, and then start walking over the array
-        $context = new ezcBaseFileFindContext;
-        self::walkRecursive( $sourceDir, $includeFilters, $excludeFilters, array( 'ezcBaseFile', 'findRecursiveCallback' ), $context );
+        $context = new \AWMports\ezcBase\Structs\FileFindContext;
+        self::walkRecursive( $sourceDir, $includeFilters, $excludeFilters, array( '\AWMports\ezcBase\File', 'findRecursiveCallback' ), $context );
 
         // collect the statistics
         $statistics['size'] = $context->size;
@@ -273,18 +276,18 @@ class ezcBaseFile
         $sourceDir = realpath( $directory );
         if ( !$sourceDir )
         {
-            throw new ezcBaseFileNotFoundException( $directory, 'directory' );
+            throw new \AWMports\ezcBase\Exceptions\FileNotFoundException( $directory, 'directory' );
         }
         $d = @dir( $sourceDir );
         if ( !$d )
         {
-            throw new ezcBaseFilePermissionException( $directory, ezcBaseFileException::READ );
+            throw new \AWMports\ezcBase\Exceptions\FilePermissionException( $directory, \AWMports\ezcBase\Exceptions\FileException::READ );
         }
         // check if we can remove the dir
         $parentDir = realpath( $directory . DIRECTORY_SEPARATOR . '..' );
         if ( !is_writable( $parentDir ) )
         {
-            throw new ezcBaseFilePermissionException( $parentDir, ezcBaseFileException::WRITE );
+            throw new \AWMports\ezcBase\Exceptions\FilePermissionException( $parentDir, \AWMports\ezcBase\Exceptions\FileException::WRITE );
         }
         // loop over contents
         while ( ( $entry = $d->read() ) !== false )
@@ -302,7 +305,7 @@ class ezcBaseFile
             {
                 if ( @unlink( $sourceDir . DIRECTORY_SEPARATOR . $entry ) === false )
                 {
-                    throw new ezcBaseFilePermissionException( $directory . DIRECTORY_SEPARATOR . $entry, ezcBaseFileException::REMOVE );
+                    throw new \AWMports\ezcBase\Exceptions\FilePermissionException( $directory . DIRECTORY_SEPARATOR . $entry, \AWMports\ezcBase\Exceptions\FileException::REMOVE );
                 }
             }
         }
@@ -321,9 +324,9 @@ class ezcBaseFile
     *
     * You may optionally define modes used to create files and directories.
     *
-    * @throws ezcBaseFileNotFoundException
+    * @throws \AWMports\ezcBase\Exceptions\FileNotFoundException
     *      If the $sourceDir directory is not a directory or does not exist.
-    * @throws ezcBaseFilePermissionException
+    * @throws \AWMports\ezcBase\Exceptions\FilePermissionException
     *      If the $sourceDir directory could not be opened for reading, or the
     *      destination is not writeable.
     *
@@ -339,13 +342,13 @@ class ezcBaseFile
         // Check if source file exists at all.
         if ( !is_file( $source ) && !is_dir( $source ) )
         {
-            throw new ezcBaseFileNotFoundException( $source );
+            throw new \AWMports\ezcBase\Exceptions\FileNotFoundException( $source );
         }
 
         // Destination file should NOT exist
         if ( is_file( $destination ) || is_dir( $destination ) )
         {
-            throw new ezcBaseFilePermissionException( $destination, ezcBaseFileException::WRITE );
+            throw new \AWMports\ezcBase\Exceptions\FilePermissionException( $destination, \AWMports\ezcBase\Exceptions\FileException::WRITE );
         }
 
         // Skip non readable files in source directory
@@ -467,7 +470,7 @@ class ezcBaseFile
     {
         if ( $os === null )
         {
-            $os = ezcBaseFeatures::os();
+            $os = \AWMports\ezcBase\Features::os();
         }
 
         // Stream wrapper like phar can also be considered absolute paths

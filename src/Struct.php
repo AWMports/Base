@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseStruct.
+ * File containing the \AWMports\ezcBase\Struct class.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -30,7 +30,10 @@
  * @package Base
  * @version //autogentag//
  */
-class ezcBaseStruct
+
+namespace AWMports\ezcBase
+
+class Struct
 {
     /**
      * Throws a BasePropertyNotFound exception.
@@ -41,7 +44,7 @@ class ezcBaseStruct
      */
     final public function __set( $name, $value )
     {
-        throw new ezcBasePropertyNotFoundException( $name );
+        throw new \AWMports\ezcBase\Exceptions\PropertyNotFoundException( $name );
     }
 
     /**
@@ -52,7 +55,7 @@ class ezcBaseStruct
      */
     final public function __get( $name )
     {
-        throw new ezcBasePropertyNotFoundException( $name );
+        throw new \AWMports\ezcBase\Exceptions\PropertyNotFoundException( $name );
     }
 }
 ?>
