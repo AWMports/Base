@@ -4,8 +4,9 @@ AWMports\ezcBase
 This is a port of the `zetacomponents/base` package to use PSR-4 namespaced
 class and filename structure.
 
-The initial port is of `zetacomponents/base` version 1.9.1 and should currently
-not be used.
+The initial fork is of `zetacomponents/base` version 1.9.1
+
+This fork is likely broken and should currently not be used.
 
 __THIS FORK SHOULD NOT YET BE USED__
 
@@ -78,7 +79,7 @@ The following upstream classes have been completely removed:
   __Reason:__ Autoloading has been removed from the `Base` class in favor of
   PSR-4 autoloading.
   
-* `ezcBaseRepositoryDirectory`
+* `ezcBaseRepositoryDirectory  `
   __Reason:__ This fork will not be maintaining a repository directory, which
   appears to have only been needed for the Base class autoloading.
   
