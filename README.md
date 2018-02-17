@@ -126,3 +126,39 @@ Calls to those functions should not be made. Only four of the removed methods ar
 
 Libraries that used those methods will need to be updated not to use those methods.
 
+
+Library and Application Porting
+-------------------------------
+
+To port existing libraries and applications from zetacomponents/base to AWMports/ezcBase:
+
+    Zeta Components Class Name                     Namespaced Equivalent
+    --------------------------------------------------------------------------
+    ezcBase                                   -->  \AWMports\ezcBase\Base
+    ezcBaseConfigurationInitializer           -->  \AWMports\ezcBase\Interfaces\ConfigurationInitializer
+    ezcBaseException                          -->  \AWMports\ezcBase\Exceptions\Exception
+    ezcBaseExportable                         -->  \AWMports\ezcBase\Interfaces\Exportable
+    ezcBaseExtensionNotFoundException         -->  \AWMports\ezcBase\Exceptions\ExtensionNotFoundException
+    ezcBaseFeatures                           -->  \AWMports\ezcBase\Features
+    ezcBaseFile                               -->  \AWMports\ezcBase\File
+    ezcBaseFileException                      -->  \AWMports\ezcBase\Exceptions\FileException
+    ezcBaseFileFindContext                    -->  \AWMports\ezcBase\Structs\FileFindContext
+    ezcBaseFileIoException                    -->  \AWMports\ezcBase\Exceptions\FileIoException
+    ezcBaseFileNotFoundException              -->  \AWMports\ezcBase\Exceptions\FileNotFoundException
+    ezcBaseFilePermissionException            -->  \AWMports\ezcBase\Exceptions\FilePermissionException
+    ezcBaseFunctionalityNotSupportedException -->  \AWMports\ezcBase\Exceptions\FunctionalityNotSupportedException
+    ezcBaseInit                               -->  \AWMports\ezcBase\Init
+    ezcBaseInitCallbackConfiguredException    -->  \AWMports\ezcBase\Exceptions\InitCallbackConfiguredException
+    ezcBaseInitInvalidCallbackClassException  -->  \AWMports\ezcBase\Exceptions\InitInvalidCallbackClassException
+    ezcBaseInvalidParentClassException        -->  \AWMports\ezcBase\Exceptions\InvalidParentClassException
+    ezcBaseOptions                            -->  \AWMports\ezcBase\Options
+    ezcBasePersistable                        -->  \AWMports\ezcBase\Interfaces\Persistable
+    ezcBasePropertyNotFoundException          -->  \AWMports\ezcBase\Exceptions\PropertyNotFoundException
+    ezcBasePropertyPermissionException        -->  \AWMports\ezcBase\Exceptions\PropertyPermissionException
+    ezcBaseMetadata                           -->  \AWMports\ezcBase\MetaData
+    ezcBaseSettingNotFoundException           -->  \AWMports\ezcBase\Exceptions\SettingNotFoundException
+    ezcBaseSettingValueException              -->  \AWMports\ezcBase\Exceptions\SettingValueException
+    ezcBaseStruct                             -->  \AWMports\ezcBase\Struct
+    ezcBaseValueException                     -->  \AWMports\ezcBase\Exceptions\ValueException
+    ezcBaseWhateverException                  -->  \AWMports\ezcBase\Exceptions\WhateverException
+    
