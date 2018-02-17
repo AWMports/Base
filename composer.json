@@ -1,0 +1,44 @@
+{
+    "authors": [
+        {
+            "name": "Sergey Alexeev"
+        },
+        {
+            "name": "Sebastian Bergmann"
+        },
+        {
+            "name": "Jan Borsodi"
+        },
+        {
+            "name": "Raymond Bosman"
+        },
+        {
+            "name": "Frederik Holljen"
+        },
+        {
+            "name": "Kore Nordmann"
+        },
+        {
+            "name": "Derick Rethans"
+        },
+        {
+            "name": "Vadym Savchuk"
+        },
+        {
+            "name": "Tobias Schlitt"
+        },
+        {
+            "name": "Alexandru Stanoi"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AWMports\\ezcBase\\": "src/"
+        }
+    },
+    "description": "A port of the ZetaComponents Base component to namespaced PSR-4 classes",
+    "homepage": "https://github.com/AWMports/ezcBase",
+    "license": "Apache-2.0",
+    "name": "awmports/ezcbase",
+    "type": "library"
+}
