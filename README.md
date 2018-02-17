@@ -79,7 +79,7 @@ The following upstream classes have been completely removed:
   __Reason:__ Autoloading has been removed from the `Base` class in favor of
   PSR-4 autoloading.
   
-* `ezcBaseRepositoryDirectory  `
+* `ezcBaseRepositoryDirectory`  
   __Reason:__ This fork will not be maintaining a repository directory, which
   appears to have only been needed for the Base class autoloading.
   
