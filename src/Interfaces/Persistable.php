@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBasePersistable interface
+ * File containing the \AWMports\ezcBase\Interfaces\Persistable interface
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,6 +23,7 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
  * This class provides the interface that classes need to implement to be able
  * to be used by the PersistentObject and Search components.
@@ -30,7 +31,10 @@
  * @package Base
  * @version //autogen//
  */
-interface ezcBasePersistable
+
+namespace AWMports\ezcBase\Interfaces
+
+interface Persistable
 {
     /**
      * The constructor for the object needs to be able to accept no arguments.

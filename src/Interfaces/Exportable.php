@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseExportable interface.
+ * File containing the \AWMports\ezcBase\Interfaces\Exportable interface.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,6 +23,7 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
  * Interface for class of which instances can be exported using var_export().
  *
@@ -32,7 +33,10 @@
  *
  * @see var_export()
  */
-interface ezcBaseExportable
+
+namespace AWMports\ezcBase\Interfaces
+
+interface Exportable
 {
     /**
      * Returns an instance of the desired object, initialized from $state.

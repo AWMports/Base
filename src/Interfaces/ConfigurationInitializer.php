@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseConfigurationInitializer class
+ * File containing the \AWMports\ezcBase\Interfaces\ConfigurationInitializer class
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,6 +23,7 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
  * This class provides the interface that classes need to implement to act as
  * an callback initializer class to work with the delayed initialization
@@ -31,7 +32,10 @@
  * @package Base
  * @version //autogen//
  */
-interface ezcBaseConfigurationInitializer
+
+namespace AWMports\ezcBase\Interfaces
+
+interface ConfigurationInitializer
 {
     /**
      * Configures the given object, or returns the proper object depending on
