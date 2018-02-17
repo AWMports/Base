@@ -125,6 +125,3 @@ Calls to those functions should not be made. Only four of the removed methods ar
 
 Libraries that used those methods will need to be updated not to use those methods.
 
-### Changes to the Features class
-
-The method 
