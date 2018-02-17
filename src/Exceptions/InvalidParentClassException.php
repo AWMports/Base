@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseInvalidParentClassException class
+ * File containing the \AWMports\ezcBase\Exceptions\InvalidParentClassException class
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,16 +23,20 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
  * Exception that is thrown if an invalid class is passed as custom class.
  *
  * @package Base
  * @version //autogen//
  */
-class ezcBaseInvalidParentClassException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions
+
+class InvalidParentClassException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs an ezcBaseInvalidParentClassException for custom class $customClass
+     * Constructs an \AWMports\ezcBase\Exceptions\InvalidParentClassException for custom class $customClass
      *
      * @param string $expectedParentClass
      * @param string $customClass

@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseInitCallbackConfiguredException class
+ * File containing the \AWMports\ezcBase\Exceptions\InitCallbackConfiguredException class
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,18 +23,22 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
- * ezcBaseInitCallbackConfiguredException is thrown when you try to assign a
+ * \AWMports\ezcBase\Exceptions\InitCallbackConfiguredException is thrown when you try to assign a
  * callback clasname to an identifier, while there is already a callback class
  * configured for this identifier.
  *
  * @package Base
  * @version //autogen//
  */
-class ezcBaseInitCallbackConfiguredException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions
+
+class InitCallbackConfiguredException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs a new ezcBaseInitCallbackConfiguredException.
+     * Constructs a new \AWMports\ezcBase\Exceptions\InitCallbackConfiguredException.
      *
      * @param string $identifier
      * @param string $originalCallbackClassName

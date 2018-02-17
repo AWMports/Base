@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBasePropertyNotFoundException class
+ * File containing the \AWMports\ezcBase\Exceptions\PropertyNotFoundException class
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,17 +23,21 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
- * ezcBasePropertyNotFoundException is thrown whenever a non existent property
+ * \AWMports\ezcBase\Exceptions\PropertyNotFoundException is thrown whenever a non existent property
  * is accessed in the Components library.
  *
  * @package Base
  * @version //autogen//
  */
-class ezcBasePropertyNotFoundException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions
+
+class PropertyNotFoundException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs a new ezcBasePropertyNotFoundException for the property
+     * Constructs a new \AWMports\ezcBase\Exceptions\PropertyNotFoundException for the property
      * $name.
      *
      * @param string $name The name of the property

@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseExtensionNotFoundException class
+ * File containing the \AWMports\ezcBase\Exceptions\ExtensionNotFoundException class
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -25,15 +25,18 @@
  */
 
 /**
- * ezcBaseExtensionNotFoundException is thrown when a requested PHP extension was not found.
+ * \AWMports\ezcBase\Exceptions\ExtensionNotFoundException is thrown when a requested PHP extension was not found.
  *
  * @package Base
  * @version //autogen//
  */
-class ezcBaseExtensionNotFoundException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions 
+
+class ExtensionNotFoundException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs a new ezcBaseExtensionNotFoundException.
+     * Constructs a new \AWMports\ezcBase\Exceptions\ExtensionNotFoundException.
      *
      * @param string $name The name of the extension
      * @param string $version The version of the extension

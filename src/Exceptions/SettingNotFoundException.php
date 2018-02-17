@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseSettingNotFoundException class.
+ * File containing the \AWMports\ezcBase\Exceptions\SettingNotFoundException class.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,17 +23,21 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
- * ezcBaseSettingNotFoundException is thrown whenever there is a name passed as
+ * \AWMports\ezcBase\Exceptions\SettingNotFoundException is thrown whenever there is a name passed as
  * part as the options array to setOptions() for an option that doesn't exist.
  *
  * @package Base
  * @version //autogen//
  */
-class ezcBaseSettingNotFoundException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions 
+
+class SettingNotFoundException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs a new ezcBaseSettingNotFoundException for $settingName.
+     * Constructs a new \AWMports\ezcBase\Exceptions\SettingNotFoundException for $settingName.
      *
      * @param string $settingName The name of the setting that does not exist.
      */

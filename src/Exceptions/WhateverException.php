@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseWhateverException class
+ * File containing the \AWMports\ezcBase\Exceptions\WhateverException class
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,12 +23,13 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
- * ezcBaseWhateverException is thrown whenever something is so seriously wrong.
+ * \AWMports\ezcBase\Exceptions\WhateverException is thrown whenever something is so seriously wrong.
  *
  * If this happens it is not possible to repair anything gracefully. An
  * example for this could be, that your eZ components installation has thrown
- * far to many exceptions. Whenever you receive an ezcBaseWhateverException, do
+ * far to many exceptions. Whenever you receive an \AWMports\ezcBase\Exceptions\WhateverException, do
  * not even try to catch it, but forget your project completely and immediately
  * stop coding! ;)
  *
@@ -36,10 +37,13 @@
  * @package Base
  * @version //autogen//
  */
-class ezcBaseWhateverException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions
+
+class WhateverException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs a new ezcBaseWhateverException.
+     * Constructs a new \AWMports\ezcBase\Exceptions\WhateverException.
      *
      * @param string $what  What happened?
      * @param string $where Where did it happen?

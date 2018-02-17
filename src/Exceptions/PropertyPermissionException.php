@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcPropertyReadOnlyException class
+ * File containing the \AWMports\ezcBase\Exceptions\PropertyPermissionException class
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,14 +23,18 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
- * ezcBasePropertyPermissionException is thrown whenever a read-only property
+ * \AWMports\ezcBase\Exceptions\PropertyPermissionException is thrown whenever a read-only property
  * is tried to be changed, or when a write-only property was accessed for reading.
  *
  * @package Base
  * @version //autogen//
  */
-class ezcBasePropertyPermissionException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions 
+
+class PropertyPermissionException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
      * Used when the property is read-only.
@@ -43,7 +47,7 @@ class ezcBasePropertyPermissionException extends ezcBaseException
     const WRITE = 2;
 
     /**
-     * Constructs a new ezcPropertyPermissionException for the property $name.
+     * Constructs a new \AWMports\ezcBase\Exceptions\PropertyPermissionException for the property $name.
      *
      * @param string $name The name of the property.
      * @param int    $mode The mode of the property that is allowed (::READ or ::WRITE).

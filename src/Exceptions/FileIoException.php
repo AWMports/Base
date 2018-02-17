@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseFileIoException class
+ * File containing the \AWMports\ezcBase\Exceptions\FileIoException class
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,33 +23,37 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
- * ezcBaseFileIoException is thrown when a problem occurs while writing
+ * \AWMports\ezcBase\Exceptions\FileIoException is thrown when a problem occurs while writing
  * and reading to/from an open file.
  *
  * @package Base
  * @version //autogen//
  */
-class ezcBaseFileIoException extends ezcBaseFileException
+
+namespace AWMports\ezcBase\Exceptions 
+
+class FileIoException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs a new ezcBaseFileIoException for the file $path.
+     * Constructs a new \AWMports\ezcBase\Exceptions\FileIoException for the file $path.
      *
      * @param string $path The name of the file.
      * @param int    $mode The mode of the property that is allowed
-     *               (ezcBaseFileException::READ, ezcBaseFileException::WRITE,
-     *               ezcBaseFileException::EXECUTE or
-     *               ezcBaseFileException::CHANGE).
+     *               (\AWMports\ezcBase\Exceptions\FileException::READ, \AWMports\ezcBase\Exceptions\FileException::WRITE,
+     *               \AWMports\ezcBase\Exceptions\FileException::EXECUTE or
+     *               \AWMports\ezcBase\Exceptions\FileException::CHANGE).
      * @param string $message A string with extra information.
      */
     function __construct( $path, $mode, $message = null )
     {
         switch ( $mode )
         {
-            case ezcBaseFileException::READ:
+            case \AWMports\ezcBase\Exceptions\FileException::READ:
                 $operation = "An error occurred while reading from '{$path}'";
                 break;
-            case ezcBaseFileException::WRITE:
+            case \AWMports\ezcBase\Exceptions\FileException::WRITE:
                 $operation = "An error occurred while writing to '{$path}'";
                 break;
         }

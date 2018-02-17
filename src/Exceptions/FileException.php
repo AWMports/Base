@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseFileException class
+ * File containing the \AWMports\ezcBase\Exceptions\FileException class
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,14 +23,18 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
- * ezcBaseFileException is the exception from which all file related exceptions
+ * \AWMports\ezcBase\Exceptions\FileException is the exception from which all file related exceptions
  * inherit.
  *
  * @package Base
  * @version //autogen//
  */
-abstract class ezcBaseFileException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions
+
+abstract class FileException extends \AWMports\ezcBase\Exceptions\Exception
 {
     const READ    = 1;
     const WRITE   = 2;

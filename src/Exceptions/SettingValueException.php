@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseSettingValueException class.
+ * File containing the \AWMports\ezcBase\Exceptions\SettingValueException class.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,17 +23,21 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
- * ezcBaseSettingValueExeception is thrown whenever a value to a class'
+ * \AWMports\ezcBase\Exceptions\SettingValueException is thrown whenever a value to a class'
  * configuration option is either of the wrong type, or has a wrong value.
  *
  * @package Base
  * @version //autogen//
  */
-class ezcBaseSettingValueException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions 
+
+class SettingValueException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs a new ezcBaseConfigException
+     * Constructs a new \AWMports\ezcBase\Exceptions\SettingValueException
      *
      * @param string  $settingName The name of the setting where something was
      *                wrong with.

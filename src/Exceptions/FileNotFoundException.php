@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseFileNotFoundException class
+ * File containing the \AWMports\ezcBase\Exceptions\FileNotFoundException class
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,17 +23,21 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
- * ezcBaseFileNotFoundException is thrown when a file or directory was tried to
+ * \AWMports\ezcBase\Exceptions\FileNotFoundException is thrown when a file or directory was tried to
  * be opened, but did not exist.
  *
  * @package Base
  * @version //autogen//
  */
-class ezcBaseFileNotFoundException extends ezcBaseFileException
+
+namespace AWMports\ezcBase\Exceptions 
+
+class FileNotFoundException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs a new ezcBaseFileNotFoundException.
+     * Constructs a new \AWMports\ezcBase\Exceptions\FileNotFoundException.
      *
      * @param string $path The name of the file.
      * @param string $type The type of the file.

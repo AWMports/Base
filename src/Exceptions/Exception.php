@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseException class.
+ * File containing the \AWMports\ezcBase\Exceptions\Exception class.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,14 +23,18 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
- * ezcBaseException is a container from which all other exceptions in the
+ * \AWMports\ezcBase\Exceptions\Exception is a container from which all other exceptions in the
  * components library descent.
  *
  * @package Base
  * @version //autogen//
  */
-abstract class ezcBaseException extends Exception
+
+namespace AWMports\ezcBase\Exceptions
+
+abstract class Exception extends Exception
 {
     /**
      * Original message, before escaping
@@ -38,7 +42,7 @@ abstract class ezcBaseException extends Exception
     public $originalMessage;
 
     /**
-     * Constructs a new ezcBaseException with $message
+     * Constructs a new \AWMports\ezcBase\Exceptions\Exception with $message
      *
      * @param string $message
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseValueException class.
+ * File containing the \AWMports\ezcBase\Exceptions\ValueException class.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,17 +23,21 @@
  * @version //autogen//
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
+
 /**
- * ezcBaseValueException is thrown whenever the type or value of the given
+ * \AWMports\ezcBase\Exceptions\ValueException is thrown whenever the type or value of the given
  * variable is not as expected.
  *
  * @package Base
  * @version //autogen//
  */
-class ezcBaseValueException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions
+
+class ValueException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs a new ezcBaseValueException on the $name variable.
+     * Constructs a new \AWMports\ezcBase\Exceptions\ValueException on the $name variable.
      *
      * @param string  $settingName The name of the setting where something was
      *                wrong with.

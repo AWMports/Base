@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseFunctionalityNotSupportedException class.
+ * File containing the \AWMports\ezcBase\Exceptions\FunctionalityNotSupportedException class.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -25,16 +25,19 @@
  */
 
 /**
- * The ezcBaseFunctionalityNotSupportedException is thrown when a requested
+ * The \AWMports\ezcBase\Exceptions\FunctionalityNotSupportedException is thrown when a requested
  * PHP function was not found.
  *
  * @package Base
  * @version //autogen//
  */
-class ezcBaseFunctionalityNotSupportedException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions
+
+class FunctionalityNotSupportedException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs a new ezcBaseFunctionalityNotSupportedException.
+     * Constructs a new \AWMports\ezcBase\Exceptions\FunctionalityNotSupportedException.
      *
      * @param string $message The message to throw
      * @param string $reason The reason for the exception

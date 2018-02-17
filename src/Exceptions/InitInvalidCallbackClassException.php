@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the ezcBaseInitInvalidCallbackClassException class
+ * File containing the \AWMports\ezcBase\Exceptions\InitInvalidCallbackClassException class
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -31,17 +31,20 @@
  * @package Base
  * @version //autogen//
  */
-class ezcBaseInitInvalidCallbackClassException extends ezcBaseException
+
+namespace AWMports\ezcBase\Exceptions
+
+class InitInvalidCallbackClassException extends \AWMports\ezcBase\Exceptions\Exception
 {
     /**
-     * Constructs a new ezcBaseInitInvalidCallbackClassException for the $callbackClass.
+     * Constructs a new \AWMports\ezcBase\Exceptions\InitInvalidCallbackClassException for the $callbackClass.
      *
      * @param string $callbackClass
      * @return void
      */
     function __construct( $callbackClass )
     {
-        parent::__construct( "Class '{$callbackClass}' does not exist, or does not implement the 'ezcBaseConfigurationInitializer' interface." );
+        parent::__construct( "Class '{$callbackClass}' does not exist, or does not implement the '\AWMports\ezcBase\Interfaces\ConfigurationInitializer' interface." );
     }
 }
 ?>
