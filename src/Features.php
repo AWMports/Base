@@ -227,6 +227,10 @@ class Features
             }
             return false;
         }
+        catch ( \AWMports\ezcBase\Exceptions\WhateverException $e )
+        {
+            return false;
+        }
     }
 
     /**

@@ -83,7 +83,7 @@
 
 namespace AWMports\ezcBase;
 
-class BaseInit
+class Init
 {
     /**
      * Contains the callback where the identifier is the key of the array, and the classname to callback to the value.
