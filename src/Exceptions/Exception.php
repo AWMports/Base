@@ -34,7 +34,7 @@
 
 namespace AWMports\ezcBase\Exceptions;
 
-abstract class Exception extends Exception
+abstract class Exception extends \Exception
 {
     /**
      * Original message, before escaping

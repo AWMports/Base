@@ -33,7 +33,7 @@
 
 namespace AWMports\ezcBase\Structs;
 
-class FileFindContext extends AWMports\ezcBase\Struct
+class FileFindContext extends \AWMports\ezcBase\Struct
 {
     /**
      * The list of files
