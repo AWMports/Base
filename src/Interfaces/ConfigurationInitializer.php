@@ -33,7 +33,7 @@
  * @version //autogen//
  */
 
-namespace AWMports\ezcBase\Interfaces
+namespace AWMports\ezcBase\Interfaces;
 
 interface ConfigurationInitializer
 {

@@ -31,7 +31,7 @@
  * @version //autogentag//
  */
 
-namespace AWMports\ezcBase\Structs
+namespace AWMports\ezcBase\Structs;
 
 class FileFindContext extends AWMports\ezcBase\Struct
 {

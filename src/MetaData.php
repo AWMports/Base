@@ -34,7 +34,7 @@
  * @mainclass
  */
 
-namespace AWMports\ezcBase
+namespace AWMports\ezcBase;
 
 class MetaData
 {

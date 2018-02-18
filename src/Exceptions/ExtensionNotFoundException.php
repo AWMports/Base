@@ -31,7 +31,7 @@
  * @version //autogen//
  */
 
-namespace AWMports\ezcBase\Exceptions 
+namespace AWMports\ezcBase\Exceptions;
 
 class ExtensionNotFoundException extends \AWMports\ezcBase\Exceptions\Exception
 {

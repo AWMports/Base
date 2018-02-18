@@ -81,7 +81,7 @@
  * @version //autogentag//
  */
 
-namespace AWMports\ezcBase
+namespace AWMports\ezcBase;
 
 class BaseInit
 {

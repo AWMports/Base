@@ -32,7 +32,7 @@
  * @version //autogen//
  */
 
-namespace AWMports\ezcBase\Exceptions 
+namespace AWMports\ezcBase\Exceptions;
 
 class FilePermissionException extends \AWMports\ezcBase\Exceptions\Exception
 {

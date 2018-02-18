@@ -32,7 +32,7 @@
  * @version //autogen//
  */
 
-namespace AWMports\ezcBase\Exceptions
+namespace AWMports\ezcBase\Exceptions;
 
 class FunctionalityNotSupportedException extends \AWMports\ezcBase\Exceptions\Exception
 {

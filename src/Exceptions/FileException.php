@@ -32,7 +32,7 @@
  * @version //autogen//
  */
 
-namespace AWMports\ezcBase\Exceptions
+namespace AWMports\ezcBase\Exceptions;
 
 abstract class FileException extends \AWMports\ezcBase\Exceptions\Exception
 {

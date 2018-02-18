@@ -32,7 +32,7 @@
  * @mainclass
  */
 
-namespace AWMports\ezcBase
+namespace AWMports\ezcBase;
 
 class Base
 {

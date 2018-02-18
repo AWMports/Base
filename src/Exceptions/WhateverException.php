@@ -38,7 +38,7 @@
  * @version //autogen//
  */
 
-namespace AWMports\ezcBase\Exceptions
+namespace AWMports\ezcBase\Exceptions;
 
 class WhateverException extends \AWMports\ezcBase\Exceptions\Exception
 {
