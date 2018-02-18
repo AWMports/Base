@@ -40,5 +40,9 @@
     "homepage": "https://github.com/AWMports/ezcBase",
     "license": "Apache-2.0",
     "name": "awmports/ezcbase",
-    "type": "library"
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "~5.7",
+        "awmports/ezcunittest": "*"
+    }
 }

@@ -30,7 +30,7 @@
  * @package Base
  * @subpackage Tests
  */
-class testBaseInitCallback implements ezcBaseConfigurationInitializer
+class testBaseInitCallback implements \AWMports\ezcBase\Interfaces\ConfigurationInitializer
 {
     static public function configureObject( $objectToConfigure )
     {

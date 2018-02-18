@@ -40,7 +40,7 @@ class testBaseInitClass
         if ( is_null( self::$instance ) )
         {
             self::$instance = new testBaseInitClass();
-            ezcBaseInit::fetchConfig( 'testBaseInit', self::$instance );
+            \AWMports\ezcBase\Init::fetchConfig( 'testBaseInit', self::$instance );
         }
         return self::$instance;
     }
