@@ -1,4 +1,8 @@
 <?php
+
+echo "ezcBase autoload capabilities has been removed in this fork.";
+exit;
+
 $dir = dirname( __FILE__ );
 $dirParts = explode( DIRECTORY_SEPARATOR, $dir );
 switch ( $dirParts[count( $dirParts ) - 3] )
