@@ -113,7 +113,7 @@ class Init
             }
 
             // Check if the passed classname actually implements the interface.
-            if ( !in_array( '\AWMports\ezcBase\Interfaces\ConfigurationInitializer', class_implements( $callbackClassname ) ) )
+            if ( !in_array( 'AWMports\ezcBase\Interfaces\ConfigurationInitializer', class_implements( $callbackClassname ) ) )
             {
                 throw new \AWMports\ezcBase\Exceptions\InitInvalidCallbackClassException( $callbackClassname );
             }
