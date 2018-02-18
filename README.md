@@ -44,13 +44,13 @@ PSR-4 Autoloading
 -----------------
 
 All classes are now namespaced. The top level namespace is `AWMimports` and the
-second level namespace is `ztsBase`.
+second level namespace is `ezcBase`.
 
 In cases where upstream had the class file in a subdirectory of `src/` a third
 level namespace is used, the name of the subdirectory with first letter upper
 case.
 
-The class names have been modified to remove the `ztsBase` prefix as that
+The class names have been modified to remove the `ezcBase` prefix as that
 purpose is now served by the namespace.
 
 The filenames of the classes has been changed to match the class name, in
